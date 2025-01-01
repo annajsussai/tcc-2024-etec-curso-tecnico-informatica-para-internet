@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery.js"></script>
+    <link rel="icon" href="./img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/login.css">
+
+		<title>Login - Ecorastro</title>
+
+	<script>
+		
+		$(document).ready(function(){
+            $('#verificar').click(function (event) {
+                event.preventDefault();
+                var ds_loginL = $('#ds_loginL').val();
+                var senhaL = $("#senhaL").val();
+                $.ajax({
+                    url: "./login.php",
+                    type: "POST",
+                    data: { ds_loginL: ds_loginL, senhaL: senhaL },
+                }).done(function(resposta) {
+                    if (resposta.includes("Usuário não encontrado!")) {
+                        $('#resultado').html(resposta);
+                    } else {
+                        window.location.href = resposta; 
+                    }
+                }).fail(function(jqXHR, textStatus) {
+                    console.log("Request failed: " + textStatus);
+                }).always(function() {
+                    console.log("completou");
+                }); 
+            });
+        });
+	</script>
+</head>
+<body>
+
+    <h1 class="titulo">Login</h1>
+	<img src="img/login.png" class="curva" alt="curva">
+
+    <div class="login">
+        <div class="caixa">
+
+        <div class="email">
+        	
+            <input type="text" id="ds_loginL" placeholder="E-mail" required/> 
+        </div>  
+        <div class="senha">
+	        
+            <input type="password" id="senhaL" placeholder="Senha" minlength="6" maxlength="16" required/> 
+        </div>  
+
+        <div class="entrar">
+            <p>Ainda não tem uma conta? <a href="cadastro.html">Crie uma.</a></p>
+            <input id="verificar" type="submit" value="Entrar">
+        </div>
+
+    <div id="resultado"></div>
+
+    </div>
+</div>
+
+</body>
+</html>

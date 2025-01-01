@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/logo.png" type="image/png">
+	<link rel="stylesheet" href="css/cadastro.css">
+		<title>Cadastrar - Ecorastro</title>
+
+		<script>
+			$(document).ready(function(){
+				$('#verificar').click(function(event) {
+					event.preventDefault();
+		
+					var nm_usuario = $('#nm_usuario').val().trim();
+					var ds_login = $('#ds_login').val().trim();
+					var senha = $("#senha").val().trim(); 
+					var ds_endereco = $("#ds_endereco").val().trim();
+					var bairro = $("#bairro option:selected").val();
+					var telefone = $("#telefone").val().trim();
+
+					if (!nm_usuario || !ds_login || !senha || !ds_endereco || !bairro || !telefone) {
+						alert('Por favor, preencha todos os campos.');
+						return;
+					}
+
+					if (senha.length < 6) {
+						alert('A senha deve ter no mínimo 6 caracteres.');
+						return; 
+					}
+
+					$.ajax({
+						url: "./cadastro.php",
+						type: "POST",
+						data: {
+							nm_usuario: nm_usuario,
+							ds_login: ds_login,
+							senha: senha,
+							ds_endereco: ds_endereco,
+							bairro: bairro,
+							telefone: telefone
+						},
+					}).done(function(resposta) {
+						$('#resultado').html(resposta);
+						$('#nm_usuario').val("");
+						$('#ds_login').val("");
+						$('#senha').val("");
+						$('#ds_endereco').val("");
+						$('#bairro').val("");
+						$('#telefone').val("");
+					}).fail(function(jqXHR, textStatus) {
+						console.log("Request failed: " + textStatus);
+					}).always(function() {
+						console.log("completou");
+					});
+				});
+			});
+		
+			// Formatação do campo de telefone
+			document.addEventListener('DOMContentLoaded', function() {
+				var telefoneInput = document.getElementById('telefone');
+		
+				telefoneInput.addEventListener('input', function() {
+					var telefone = this.value.replace(/\D/g, ''); 
+					var formattedTelefone = '';
+		
+					if (telefone.length > 0) {
+						formattedTelefone = '(' + telefone.substring(0, 2);
+					}
+					if (telefone.length > 2) {
+						formattedTelefone += ') ' + telefone.substring(2, 7);
+					}
+					if (telefone.length > 7) {
+						formattedTelefone += '-' + telefone.substring(7, 11);
+					}
+		
+					this.value = formattedTelefone;
+				});
+			});
+		</script>
+		
+</head>
+
+
+<body>
+
+	
+		<h1 class="titulo">Cadastro</h1>
+	<img src="img/cadastro.png" class="curva" alt="curva">
+	
+    <div class="login">
+    	<div class="caixa">
+
+	<div class="nome">
+		 
+		<input type="text" id="nm_usuario" placeholder="Nome Completo"/> 
+	</div>
+
+	<div class="bairro">
+		<select name="bairro" id="bairro">
+			<option value="" disabled selected>Bairro</option>
+			<option value="aguapeu">Aguapeú</option>
+			<option value="ararau">Araraú</option>
+			<option value="bairro-do-rio-acima">Bairro do Rio Acima</option>
+			<option value="baixio">Baixio</option>
+			<option value="belas-artes">Belas Artes</option>
+			<option value="bopiranga">Bopiranga</option>
+			<option value="campos-eliseos">Campos Elíseos</option>
+			<option value="centro">Centro</option>
+			<option value="cibratel-i">Cibratel I</option>
+			<option value="cibratel-ii">Cibratel II</option>
+			<option value="cibratel-chacaras">Cibratel - Chácaras</option>
+			<option value="cidade-anchieta">Cidade Anchieta</option>
+			<option value="corumba">Corumbá</option>
+			<option value="gaivota-interior">Gaivota-Interior</option>
+			<option value="gaivota-praia">Gaivota-Praia</option>
+			<option value="guapiranga">Guapiranga</option>
+			<option value="guarau">Guaraú</option>
+			<option value="guarda-civil">Guarda Civil</option>
+			<option value="ivoty">Ivoty</option>
+			<option value="jamaica-interior">Jamaica-Interior</option>
+			<option value="jamaica-praia">Jamaica-Praia</option>
+			<option value="jardim-anchieta">Jardim Anchieta</option>
+			<option value="jardim-coronel">Jardim Coronel</option>
+			<option value="jardim-suarao-interior">Jardim Suarão-Interior</option>
+			<option value="jardim-suarao-praia">Jardim Suarão-Praia</option>
+			<option value="laranjeiras">Laranjeiras</option>
+			<option value="loty">Loty</option>
+			<option value="marrocos">Marrocos</option>
+			<option value="mosteiro">Mosteiro</option>
+			<option value="nova-itanhaem-interior">Nova Itanhaém-Interior</option>
+			<option value="nova-itanhaem-praia">Nova Itanhaém-Praia</option>
+			<option value="nossa-senhora-do-sion">Nossa Senhora do Sion</option>
+			<option value="oasis">Oásis</option>
+			<option value="praia-dos-sonhos">Praia dos Sonhos</option>
+			<option value="raminho">Raminho</option>
+			<option value="sabauna">Sabaúna</option>
+			<option value="sao-fernando">São Fernando</option>
+			<option value="satelite">Satélite</option>
+			<option value="savoy">Savoy</option>
+			<option value="suarao">Suarão</option>
+			<option value="tropical">Tropical</option>
+			<option value="tupy">Tupy</option>
+			<option value="umuarama">Umuarama</option>
+			<option value="verde-mar">Verde Mar</option>
+			<option value="vila-sao-paulo">Vila São Paulo</option>
+		</select>
+	</div>
+	
+	<div class="endereco">
+		<textarea id="ds_endereco" placeholder="Endereço"></textarea> 
+	</div>
+
+	<div class="tel">
+		
+		<input type="text" id="telefone" placeholder="Telefone"/> 
+	</div>
+
+<br>
+	<div class="email">
+		
+		<input type="email" id="ds_login" placeholder="E-mail"/> 
+	</div>
+
+	<div class="senha">
+		
+		<input type="password" id="senha" placeholder="Senha" minlength="6" maxlength="16"/><br>
+		<small style="color: #000000">• Por favor, Insira de 6 a 16 caracteres</small><br>
+ 
+	</div>
+
+	<div class="entrar">
+		<p>Já tem uma conta? <a href="index.html">Entre aqui.</a></p>
+		<input id="verificar" type="submit" value="Cadastrar">
+	</div>
+
+	<div id="resultado"></div>
+
+	</div>
+</div>
+</body>
+</html>

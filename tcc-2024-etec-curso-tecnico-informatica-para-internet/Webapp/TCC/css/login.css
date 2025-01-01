@@ -1,0 +1,90 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #6b816b;
+  color: black;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #b7d2b6;
+}
+
+.titulo{
+  background-color: #b7d2b6;
+  margin: 0 auto;
+  padding-top: 20%;
+}
+
+.login {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.email input {
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+}
+
+.senha input {
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: black;
+  margin-top: 15px;
+  font-size: 1em;
+}
+
+.entrar input {
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #b7d2b6;
+  color: #516451;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+h1 {
+  color: #6b816b;
+  font-family: "inika";
+  font-size: 3em;
+  text-align: center;
+}
+
+p{
+  color: white;
+  font-size: 1.1em;
+}
+
+.caixa {
+  margin-top: 65px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.curva{
+  width: 100%;
+  margin-top: -2px;
+}

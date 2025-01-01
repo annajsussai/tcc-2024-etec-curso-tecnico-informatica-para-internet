@@ -1,0 +1,285 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  background: #b7d2b6;
+  margin: 0 auto;
+}
+
+.titulo{
+  background-color: #6b816b;
+  margin: 0 auto;
+  padding-top: 20%;
+}
+
+a {
+  text-decoration: none;
+  color: #6b816b;
+}
+
+small{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.login {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.nome input {
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  font-size: 1em;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.email input {
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+}
+
+.senha input {
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: black;
+  margin-top: 15px;
+  font-size: 1em;
+}
+
+.bairro select {
+  border-radius: 15px;
+  border: none;
+  width: 268px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: gray(148, 148, 148);
+  margin-top: 15px;
+  font-size: 1em;
+}
+
+.tel input {
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: black;
+  margin-top: 15px;
+  font-size: 1em;
+}
+
+.endereco textarea {
+  border-radius: 15px;
+  border: none;
+  width: 245px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: white;
+  color: black;
+  margin-top: 15px;
+  font-size: 1.3em;
+}
+
+.entrar input {
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #6b816b;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+select::placeholder{
+  color: gray;
+}
+
+h1 {
+  color: #b7d2b6;
+  font-family: "inika";
+  font-size: 3em;
+  text-align: center;
+}
+
+p{
+  font-size: 1.1em;
+}
+
+.caixa {
+  margin-top: 40px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.curva{
+  width: 100%;
+  margin-top: -2px;
+}body {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    background: #b7d2b6;
+    margin: 0 auto;
+}
+
+.titulo{
+    background-color: #6b816b;
+    margin: 0 auto;
+    padding-top: 20%;
+}
+
+a {
+    text-decoration: none;
+    color: #6b816b;
+}
+
+
+.login {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.nome input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    font-size: 1em;
+    height: 40px;
+    padding-left: 15px;
+    background-color: white;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.email input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: white;
+    color: black;
+    font-size: 1em;
+}
+
+.senha input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: white;
+    color: black;
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+.bairro select {
+    border-radius: 15px;
+    border: none;
+    width: 268px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: white;
+    color: gray(148, 148, 148);
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+.tel input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: white;
+    color: black;
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+.endereco textarea {
+    border-radius: 15px;
+    border: none;
+    width: 245px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: white;
+    color: black;
+    margin-top: 15px;
+    font-size: 1.3em;
+}
+
+.entrar input {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #6b816b;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+select::placeholder{
+    color: gray;
+}
+
+h1 {
+    color: #b7d2b6;
+    font-family: "inika";
+    font-size: 3em;
+    text-align: center;
+}
+
+p{
+    font-size: 1.1em;
+}
+
+.caixa {
+    margin-top: 40px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.curva{
+    width: 100%;
+    margin-top: -2px;
+}
